@@ -1,5 +1,6 @@
 ~~~~
-1. Напишите на Python скрипт, который будет из POST запроса писать значение в базу данных (использовать Postgres).
+1. Напишите на Python скрипт, который будет из POST запроса писать значение
+   в базу данных (использовать Postgres).
 
 2. Скрипт и БД должны быть упакованы в Docker.
 
@@ -7,12 +8,22 @@
 
 4. Все должно запускаться из docker-compose.yml.
 
-5. Все сервисы должны общаться между собой через внутреннюю сеть Docker. Nginx должен быть доступен на порту 8080.
+5. Все сервисы должны общаться между собой через внутреннюю сеть Docker.
+   Nginx должен быть доступен на порту 8080.
 
 6. Код, Dockerfile и docker-compose.yml выложите в публичный доступ на GitHub.
 ~~~~
-Для запуска:
+Запускаем:
 ~~~~
-sudo docker-compose --env-file .env.sample up
+sudo docker-compose --env-file .env.sample up --build
 ~~~~
-sudo docker-compose --env-file .env.sample up
+Для сохранения записи в базу отправляем POST-запрос на дефолтный адрес 
+~~~
+localhost:8080/api/v1/upload
+
+{
+	"name": "Igor",
+	"lastname": "Sechin",
+	"work": "Rosneft"
+}
+~~~

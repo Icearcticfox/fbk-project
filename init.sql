@@ -1,8 +1,3 @@
---CREATE SEQUENCE corruption_sequence
---INCREMENT 1
---START 1;
---create table corruption(id int);
-
 CREATE TABLE corruption(
     id INT,
     first_name TEXT NOT NULL,
